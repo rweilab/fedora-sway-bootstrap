@@ -1,4 +1,4 @@
-echo "SLAP: Executing @p"
+echo "SLAP: Executing $0"
 
 echo "SLAP: Installing COPR_PKGS"
 COPR_PKGS=(lihaohong/yazi agriffis/neovim-nightly)
