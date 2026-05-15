@@ -322,16 +322,11 @@ tooltip label {
 /* --- Idle Inhibitor --- */
 
 #idle_inhibitor {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
   color: @fg;
 }
 
 #idle_inhibitor.activated {
-  color: #00cc88;
-  animation-name: blink-inhibitor;
-  animation-duration: 1s;
+  color: #5BD543;
 }
 
 /* --- Battery --- */
