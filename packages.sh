@@ -1,28 +1,29 @@
 echo "SLAP: Executing @p"
 
 echo "SLAP: Installing COPR_PKGS"
-COPR_PKGS=(lihaohong/yazi, agriffis/neovim-nightly)
-for arg in ${COPR_PKGS[@]} ; do
+COPR_PKGS=(lihaohong/yazi agriffis/neovim-nightly)
+for arg in "${COPR_PKGS[@]}" ; do
   echo "SLAP: Enabling dnf copr package: $arg"
-  dnf copr enable $arg
+  sudo dnf -y copr enable $arg
 done
 
 echo "SLAP: Installing PKGS"
 PKGS=(neovim yazi emacs tailscale syncthing)
-for arg in ${PKGS[@]} ; do
+for arg in "${PKGS[@]}" ; do
   echo "SLAP: Installing package: $arg"
-  dnf install -y $arg
+  sudo dnf install -y $arg
 done
 
 echo "SLAP: Installing BONUS_PKGS"
 BONUS_PKGS=(ripgrep fzf tealdeer ffmpeg fd-find)
 for arg in ${BONUS_PKGS[@]} ; do
   echo "SLAP: Installing package: $arg"
-  dnf install -y $arg
+  sudo dnf install -y $arg
 done
 
 
-echo "SLAP: Running auxilary installer scripts"
+echo "SLAP: Running auxiliary installer scripts"
+chmod +x ./scripts/*.sh
 ./scripts/installer_doom_emacs.sh
 ./scripts/installer_protonvpn.sh
 
