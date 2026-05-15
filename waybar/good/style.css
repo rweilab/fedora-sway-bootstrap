@@ -1,0 +1,359 @@
+/* --- Global Colors --- */
+
+@define-color bg #262626;
+@define-color bg-alt #1c1c1c;
+@define-color fg #eeeeee;
+@define-color border #3a3a3a;
+
+/* --- Global-Settings ---*/
+
+* {
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 12px;
+  font-weight: bold;
+  min-height: 0px;
+  color: @fg;
+}
+
+/* --- Waybar ---*/
+
+window#waybar {
+  background-color: @bg;
+  border-bottom: 1px solid @border;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#waybar.empty .modules-center {
+  opacity: 0;
+}
+
+/* --- Tooltip ---*/
+
+tooltip {
+  opacity: 1;
+  padding: 4px;
+  background: @bg;
+  border: 1px solid @border;
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px 1px #000000;
+  font-size: 12px;
+}
+
+tooltip label {
+  color: @fg;
+  font-weight: normal;
+}
+
+/* --- Sub-Groups ---*/
+
+#left1 {
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  color: @fg;
+  margin: 3px 10px 3px 10px;
+}
+
+#left2 {
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  color: @fg;
+  margin: 3px 10px 3px 10px;
+}
+
+#left3 {
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  color: @fg;
+  margin: 3px 10px 3px 10px;
+}
+
+#right1 {
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  color: @fg;
+  margin: 3px 10px 3px 10px;
+}
+
+#right2 {
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  color: @fg;
+  margin: 3px 10px 3px 10px;
+}
+
+#mpris {
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  color: @fg;
+}
+
+/* --- Modules ---*/
+
+.modules-center {
+  color: @fg;
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  margin: 3px 1px 3px 1px;
+}
+
+.modules-right {
+  color: @fg;
+  border-radius: 4px;
+  border: 2px solid @border;
+  background-color: @bg;
+  margin: 3px 1px 3px 1px;
+}
+
+/* --- Workspaces --- */
+
+#workspaces {
+  border: 2px solid @border;
+  border-radius: 4px;
+  background-color: @bg;
+  margin: 3px 1px;
+  padding: 1px 2px 1px;
+}
+
+#workspaces button {
+  padding: 0px 6px;
+  margin: 1px 2px;
+  border-radius: 2px;
+  background-color: #2b2b2b;
+  color: @fg;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+#workspaces button.empty {
+  background-color: #1a1a1a;
+  border: 1px solid @border;
+  color: #888888;
+  border-radius: 2px;
+}
+
+#workspaces button.empty.active {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#workspaces button:hover {
+  color: @fg;
+  border-radius: 2px;
+  background-color: @bg-alt;
+}
+
+/* --- Window Module --- */
+
+#window {
+  color: @fg;
+}
+
+/* --- General Modules --- */
+
+#tray,
+#group-tray-expander,
+#mpris,
+#cpu,
+#clock,
+#battery,
+#network,
+#memory,
+#backlight,
+#bluetooth,
+#pulseaudio,
+#custom-weather,
+#window,
+#power-profiles-daemon,
+#custom-update,
+#idle_inhibitor,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator,
+#custom-screenrecording-indicator,
+#custom-updatespacman {
+  min-width: 14px;
+  margin: 3px 1px 3px 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: @fg;
+}
+
+/* --- Hover Effects --- */
+
+#clock:hover,
+#tray:hover,
+#custom-expand-icon:hover,
+#cpu:hover,
+#memory:hover,
+#window:hover,
+#temperature:hover,
+#battery:hover,
+#bluetooth:hover,
+#power-profiles-daemon:hover,
+#backlight:hover,
+#custom-weather:hover,
+#custom-update:hover,
+#idle_inhibitor:hover,
+#custom-updatespacman:hover,
+#network:hover,
+#pulseaudio:hover {
+  color: @fg;
+  border-radius: 2px;
+  background-color: @bg-alt;
+}
+
+/* --- Tray --- */
+
+#group-tray-expander {
+  background-color: @bg;
+  color: @fg;
+}
+
+#tray {
+  background-color: @bg;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* --- Hidden --- */
+
+.hidden {
+  opacity: 0;
+}
+
+/* --- Custom Indicators --- */
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 2.5px;
+}
+
+#custom-voxtype.recording {
+  color: #ff6666;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  min-width: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 10px;
+  padding-bottom: 0px;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #ff6666;
+}
+
+/* --- MPRIS --- */
+
+#mpris {
+  animation: repeat;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* --- Recording Indicator --- */
+
+#custom-screenrecording-indicator {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: transparent;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #ff5f87;
+  animation-name: blink-recording;
+  animation-duration: 0.5s;
+}
+
+@keyframes blink-recording {
+  to {
+    color: @bg;
+  }
+}
+
+/* --- Animations --- */
+
+@keyframes blink {
+  to {
+    color: #777777;
+  }
+}
+
+@keyframes blink-inhibitor {
+  to {
+    color: @bg;
+  }
+}
+
+/* --- Idle Inhibitor --- */
+
+#idle_inhibitor {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: @fg;
+}
+
+#idle_inhibitor.activated {
+  color: #00cc88;
+  animation-name: blink-inhibitor;
+  animation-duration: 1s;
+}
+
+/* --- Battery --- */
+
+#battery.warning {
+  color: #ffaa33;
+  background-color: @bg;
+}
+
+@keyframes blink2 {
+  to {
+    background-color: transparent;
+    color: #ff4444;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: transparent;
+  color: #ffffff;
+  animation-name: blink2;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
