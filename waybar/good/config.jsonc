@@ -92,7 +92,7 @@
     "tooltip-format": "\udb83\udf86 Memory usage: {percentage}%\n\ue266 Used: {used:0.2f}GB / {total:0.2f}GB\n\uf85a Available: {avail:0.2f}GB\n\uf233 Swap used: {swapUsed:0.2f}GB / {swapTotal:0.2f}GB ({swapPercentage}%)"
   },
   "clock": {
-    "format": " {:%F :%R}",
+    "format": " {:%F  %R}",
     "format-alt": " {:%d/%m/%Y  %H:%M}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
