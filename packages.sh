@@ -23,7 +23,10 @@ done
 
 
 echo "SLAP: Running auxilary installer scripts"
-./scripts/doom_emacs_installer.sh
-./scripts/protonvpn_installer.sh
+./scripts/installer_doom_emacs.sh
+./scripts/installer_protonvpn.sh
+
+echo "SLAP: Running waybar script"
+./scripts/waybar_copy.sh
 
 echo "SLAP: FINISHED running $0"
