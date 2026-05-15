@@ -13,3 +13,6 @@ echo "SLAP: Running zpreszdo install commands"
 for rcfile in "$HOME/.zprezto/runcoms/"*; do
   ln -sf "$rcfile" "$HOME/.$(basename "$rcfile")"
 done
+
+echo "SLAP: Changing login shell"
+chsh -s $(which zsh)
