@@ -8,8 +8,8 @@ if pgrep waybar >/dev/null; then
 fi
 
 mkdir -p ~/.config/waybar
-cp "$SCRIPT_DIR/../waybar/good/config.jsonc" ~/.config/waybar/
-cp "$SCRIPT_DIR/../waybar/good/style.css" ~/.config/waybar/
+cp "$SCRIPT_DIR/../waybar/config.jsonc" ~/.config/waybar/
+cp "$SCRIPT_DIR/../waybar/style.css" ~/.config/waybar/
 echo "SLAP: Copied waybar files"
 
 mkdir -p ../waybar/fonts

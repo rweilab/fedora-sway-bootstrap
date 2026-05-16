@@ -72,6 +72,9 @@
       "(.*) - com.obsproject.Studio": "  $1 "
     }
   },
+  "sway/window": {
+    "max-length": 16,
+  },
  "cpu": {
     "interval": 10,
     "format": "{usage}% 󰍛",
