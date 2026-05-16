@@ -31,3 +31,9 @@ set $menu rofi -show drun -show-icons
     bindsym $mod+Ctrl+k resize shrink height 10px
 
 exec_always swaybg -i ~/Pictures/Cat_at_Play_4k.png -m fit
+exec brightnessctl set 100%
+
+input * {
+    repeat_rate 50
+    repeat_delay 175
+}
