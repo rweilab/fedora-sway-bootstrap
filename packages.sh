@@ -67,6 +67,8 @@ chmod +x ./scripts/*.sh
 echo "SLAP: Running extra installer scripts"
 ./scripts/waybar_copy.sh
 ./scripts/kitty_bootstrap.sh
+./scripts/sway_override.sh
+./scripts/firefox.sh
 
 
 

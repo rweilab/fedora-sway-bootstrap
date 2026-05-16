@@ -9,6 +9,8 @@ set $right l
 
 # Your preferred terminal emulator
 set $term kitty
+unbindsym $mod+Return
+bindsym = $mod+Return exec $term
 
 # stop rofi using combined list
 set $menu rofi -show drun -show-icons
@@ -17,6 +19,7 @@ set $menu rofi -show drun -show-icons
     bindsym $mod+q kill
 
     # Start your launcher
+    unbindsym $mod+Space
     bindsym $mod+Space exec $menu
 
     # Reload the configuration file
@@ -30,7 +33,10 @@ set $menu rofi -show drun -show-icons
     bindsym $mod+Ctrl+j resize grow height 10px
     bindsym $mod+Ctrl+k resize shrink height 10px
 
-exec_always swaybg -i ~/Pictures/Cat_at_Play_4k.png -m fit
+# exec_always swaybg -i ~/Pictures/Cat_at_Play_4k.png -m fit
+# Fedora calls output which can beat race conditions
+# Best thing to do is to not even play and do the same to successfully override
+output * bg /home/slap/Pictures/Cat_at_Play_4k.png fill
 exec brightnessctl set 100%
 
 input * {
