@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-set -e
+echo "SLAP: Executing $0"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+set -e
 
 echo "SLAP: Installing kitty term"
 sudo dnf install -y kitty

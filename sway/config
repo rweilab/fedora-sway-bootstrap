@@ -1,0 +1,33 @@
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Your preferred terminal emulator
+set $term kitty
+
+# stop rofi using combined list
+set $menu rofi -show drun -show-icons
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Start your launcher
+    bindsym $mod+Space exec $menu
+
+    # Reload the configuration file
+    bindsym $mod+Shift+r reload
+
+    # Basic alt-tab function
+    bindsym Mod1+Tab focus next
+
+    bindsym $mod+Ctrl+h resize shrink width 10px
+    bindsym $mod+Ctrl+l resize grow width 10px
+    bindsym $mod+Ctrl+j resize grow height 10px
+    bindsym $mod+Ctrl+k resize shrink height 10px
+
+exec_always swaybg -i ~/Pictures/Cat_at_Play_4k.png -m fit

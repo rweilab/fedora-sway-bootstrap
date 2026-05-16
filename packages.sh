@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 echo "SLAP: Executing $0"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 set -e
 
@@ -52,6 +53,9 @@ for arg in ${BONUS_PKGS[@]} ; do
   echo "SLAP: Installing package: $arg"
   sudo dnf install -y $arg
 done
+
+tldr --update
+cp "$SCRIPT_DIR/Cat_at_Play_4k.png" ~/Pictures/
 
 
 echo "SLAP: Running auxiliary installer scripts"
