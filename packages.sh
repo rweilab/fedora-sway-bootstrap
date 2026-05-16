@@ -46,6 +46,7 @@ echo "SLAP: Running auxiliary installer scripts"
 chmod +x ./scripts/*.sh
 ./scripts/installer_doom_emacs.sh
 ./scripts/installer_protonvpn.sh
+./scripts/zsh_bootstrap.sh
 
 echo "SLAP: Running waybar script"
 ./scripts/waybar_copy.sh
