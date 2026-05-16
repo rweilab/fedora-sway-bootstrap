@@ -34,7 +34,7 @@ for i in "${!PRIO_PKGS[@]}"; do
   repo="${PRIO_REPOS[$i]}"
 
   echo "Installing $pkg from $repo"
-  sudo dnf -y install "$pkg" --repo="$repo"
+  sudo dnf -y install "$pkg" --from-repo="$repo"
 done
 
 # --- Normal dnf install
