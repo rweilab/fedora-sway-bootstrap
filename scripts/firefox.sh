@@ -19,5 +19,8 @@ PROFILE_DIR="$(find ~/.config/mozilla/firefox/ -name '*.default-release')"
 SLAP_PRINT "Located "$PROFILE_DIR""
 cp "$SCRIPT_DIR/../firefox/user.js" "$PROFILE_DIR"
 
+mkdir -p "$PROFILE_DIR"/chrome
+cp "$SCRIPT_DIR/../firefox/userChrome.css" "$PROFILE_DIR"/chrome
+
 
 SLAP_PRINT "FINISHED running $0"

@@ -1,0 +1,23 @@
+#TabsToolbar {
+	visibility: collapse !important;
+}
+
+/* Remove extra spacers next to the tab bar for cleaner layout */
+.titlebar-spacer[type="pre-labs"],
+.titlebar-spacer[type="post-tabs"] {
+	display: none ~important;
+}
+
+/* Auto-hide navbar thanks to https://github.com/3ae3ae/firefox-autohide-navbar */
+#navigator-toolbox:not(:hover) > #titlebar,
+#navigator-toolbox:has(#PersonalToolbar:hover) > #titlebar,
+#navigator-toolbox:not(:hover) > #nav-bar,
+#navigator-toolbox:has(#PersonalToolbar:hover) > #nav-bar {
+  margin-top: -35px;
+  opacity: 0;
+}
+
+#titlebar, #nav-bar {
+  transition: all 0.15s ease-in-out !important;
+}
+
