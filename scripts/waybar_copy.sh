@@ -1,6 +1,6 @@
-SLAP_PRINT "Executing $0"
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../lib.sh"
+SLAP_PRINT "Executing $0"
 
 SLAP_PRINT "Killing Waybar"
 if pgrep waybar >/dev/null; then
