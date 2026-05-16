@@ -7,6 +7,26 @@ for arg in "${COPR_PKGS[@]}" ; do
   sudo dnf -y copr enable $arg
 done
 
+# --- Using dnf install pkg --from-repo=
+
+echo "SLAP: Installing PRIO_PKGS"
+PRIO_PKGS=(
+  neovim
+)
+PRIO_REPOS=(
+  "copr:copr.fedorainfracloud.org:agriffis:neovim-nightly"
+)
+
+for i in "${!PRIO_PKGS[@]}"; do
+  pkg="${PRIO_PKGS[$i]}"
+  repo="${PRIO_REPOS[$i]}"
+
+  echo "Installing $pkg from $repo"
+  sudo dnf -y install "$pkg" --repo="$repo"
+done
+
+# --- Normal dnf install
+
 echo "SLAP: Installing PKGS"
 PKGS=(neovim yazi emacs tailscale syncthing)
 for arg in "${PKGS[@]}" ; do
