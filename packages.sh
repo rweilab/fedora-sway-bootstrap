@@ -1,4 +1,16 @@
+#!/usr/bin/env bash
 echo "SLAP: Executing $0"
+
+set -e
+
+echo "SLAP: Checking internet connectivity..."
+if ! curl -fsI https://google.com >/dev/null; then
+  echo "SLAP: No internet connection. Aborting install."
+  exit 1
+fi
+echo "SLAP: Internet OK"
+
+
 
 echo "SLAP: Installing COPR_PKGS"
 COPR_PKGS=(lihaohong/yazi agriffis/neovim-nightly)
