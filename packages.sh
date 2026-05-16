@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-SLAP_PRINT() {
-    echo -e "\033[1;33mSLAP:\033[0m $*"
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib.sh"
 
 SLAP_PRINT "Executing $0"
 sudo -v
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 set -e
 
@@ -65,15 +63,15 @@ cp "$SCRIPT_DIR/Cat_at_Play_4k.png" ~/Pictures/
 
 SLAP_PRINT "Running auxiliary installer scripts"
 chmod +x ./scripts/*.sh
-source ./scripts/installer_doom_emacs.sh
-source ./scripts/installer_protonvpn.sh
-source ./scripts/zsh_bootstrap.sh
+./scripts/installer_doom_emacs.sh
+./scripts/installer_protonvpn.sh
+./scripts/zsh_bootstrap.sh
 
 SLAP_PRINT "Running extra installer scripts"
-source ./scripts/waybar_copy.sh
-source ./scripts/kitty_bootstrap.sh
-source ./scripts/sway_override.sh
-source ./scripts/firefox.sh
+./scripts/waybar_copy.sh
+./scripts/kitty_bootstrap.sh
+./scripts/sway_override.sh
+./scripts/firefox.sh
 
 
 
