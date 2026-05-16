@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 echo "SLAP: Executing $0"
+sudo -v
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 set -e
