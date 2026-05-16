@@ -1,29 +1,33 @@
 #!/usr/bin/env bash
-echo "SLAP: Executing $0"
+SLAP_PRINT() {
+    echo -e "\033[1;33mSLAP:\033[0m $*"
+}
+
+SLAP_PRINT "Executing $0"
 sudo -v
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 set -e
 
-echo "SLAP: Checking internet connectivity..."
+SLAP_PRINT "Checking internet connectivity..."
 if ! curl -fsI https://google.com >/dev/null; then
   echo "SLAP: No internet connection. Aborting install."
   exit 1
 fi
-echo "SLAP: Internet OK"
+SLAP_PRINT "SLAP: Internet OK"
 
 
 
-echo "SLAP: Installing COPR_PKGS"
+SLAP_PRINT "Installing COPR_PKGS"
 COPR_PKGS=(lihaohong/yazi agriffis/neovim-nightly)
 for arg in "${COPR_PKGS[@]}" ; do
-  echo "SLAP: Enabling dnf copr package: $arg"
+  SLAP_PRINT "SLAP: Enabling dnf copr package: $arg"
   sudo dnf -y copr enable $arg
 done
 
 # --- Using dnf install pkg --from-repo=
 
-echo "SLAP: Installing PRIO_PKGS"
+SLAP_PRINT "Installing PRIO_PKGS"
 PRIO_PKGS=(
   neovim
 )
@@ -35,23 +39,23 @@ for i in "${!PRIO_PKGS[@]}"; do
   pkg="${PRIO_PKGS[$i]}"
   repo="${PRIO_REPOS[$i]}"
 
-  echo "Installing $pkg from $repo"
+  SLAP_PRINT "$pkg from $repo"
   sudo dnf -y install "$pkg" --from-repo="$repo"
 done
 
 # --- Normal dnf install
 
-echo "SLAP: Installing PKGS"
+SLAP_PRINT "Installing PKGS"
 PKGS=(neovim yazi emacs tailscale syncthing)
 for arg in "${PKGS[@]}" ; do
-  echo "SLAP: Installing package: $arg"
+  SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg
 done
 
-echo "SLAP: Installing BONUS_PKGS"
+SLAP_PRINT "Installing BONUS_PKGS"
 BONUS_PKGS=(ripgrep fzf tealdeer ffmpeg fd-find)
 for arg in ${BONUS_PKGS[@]} ; do
-  echo "SLAP: Installing package: $arg"
+  SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg
 done
 
@@ -59,13 +63,13 @@ tldr --update
 cp "$SCRIPT_DIR/Cat_at_Play_4k.png" ~/Pictures/
 
 
-echo "SLAP: Running auxiliary installer scripts"
+SLAP_PRINT "Running auxiliary installer scripts"
 chmod +x ./scripts/*.sh
 ./scripts/installer_doom_emacs.sh
 ./scripts/installer_protonvpn.sh
 ./scripts/zsh_bootstrap.sh
 
-echo "SLAP: Running extra installer scripts"
+SLAP_PRINT "Running extra installer scripts"
 ./scripts/waybar_copy.sh
 ./scripts/kitty_bootstrap.sh
 ./scripts/sway_override.sh
@@ -76,8 +80,8 @@ echo "SLAP: Running extra installer scripts"
 
 COUNT=4
 while [ $COUNT -gt 0 ]; do
-  echo "SLAP: !!! System reboot is required"
+  SLAP_PRINT "!!! System reboot is required"
   COUNT=$(($COUNT - 1))
 done
 
-echo "SLAP: FINISHED running $0"
+SLAP_PRINT "FINISHED running $0"

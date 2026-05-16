@@ -1,6 +1,6 @@
-echo "SLAP: Executing @p"
+SLAP_PRINT "Executing @p"
 
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 
-echo "SLAP: FINISHED running $0"
+SLAP_PRINT "FINISHED running $0"

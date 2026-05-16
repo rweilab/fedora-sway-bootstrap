@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
-echo "SLAP: Executing $0"
+SLAP_PRINT "Executing $0"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 firefox &
 PID=$!
-while [ ! -d ~/.mozilla/firefox ]; do
+while [ ! -d ~/.config/mozilla/firefox ]; do
+  sleep 0.2
+done
+
+while ! pgrep firefox >/dev/null; do
   sleep 0.2
 done
 kill $PID
 
-PROFILE_DIR="(find ~/.config/mozilla/firefox/ -name '*.default-release')"
-echo "SLAP: Located "$PROFILE_DIR""
-cp "$SCRIPT_DIR/..firefox/user.js" "$PROFILE_DIR"
+PROFILE_DIR="$(find ~/.config/mozilla/firefox/ -name '*.default-release')"
+SLAP_PRINT "Located "$PROFILE_DIR""
+cp "$SCRIPT_DIR/../firefox/user.js" "$PROFILE_DIR"
 
 
-echo "SLAP: FINISHED running $0"
+SLAP_PRINT "FINISHED running $0"

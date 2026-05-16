@@ -1,8 +1,8 @@
-echo "SLAP: Executing $0"
+SLAP_PRINT "Executing $0"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "SLAP: Killing Waybar"
+SLAP_PRINT "Killing Waybar"
 if pgrep waybar >/dev/null; then
     pkill waybar
 fi
@@ -10,7 +10,7 @@ fi
 mkdir -p ~/.config/waybar
 cp "$SCRIPT_DIR/../waybar/config.jsonc" ~/.config/waybar/
 cp "$SCRIPT_DIR/../waybar/style.css" ~/.config/waybar/
-echo "SLAP: Copied waybar files"
+SLAP_PRINT "Copied waybar files"
 
 mkdir -p ../waybar/fonts
 cd ../waybar/fonts
@@ -20,7 +20,7 @@ unzip JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
 rm JetBrainsMono.zip
 fc-cache -fv
 
-echo "SLAP: Reopening waybar"
+SLAP_PRINT "Reopening waybar"
 nohup waybar >/dev/null 2>&1 & disown
 
-echo "SLAP: FINISHED running $0"
+SLAP_PRINT "FINISHED running $0"

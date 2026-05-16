@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
-echo "SLAP: Executing $0"
+SLAP_PRINT "Executing $0"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 set -e
 
-echo "SLAP: Installing kitty term"
+SLAP_PRINT "Installing kitty term"
 sudo dnf install -y kitty
-echo "SLAP: Complete"
+SLAP_PRINT "Complete"
 
-echo "SLAP: Installing JetBrains-Mono-Fonts"
+SLAP_PRINT "Installing JetBrains-Mono-Fonts"
 sudo dnf install -y jetbrains-mono-fonts
-echo "SLAP: Complete"
+SLAP_PRINT "Complete"
 
-echo "SLAP: Copying kitty files"
+SLAP_PRINT "Copying kitty files"
 mkdir -p ~/.config/kitty/
 cp "$SCRIPT_DIR/../kitty/kitty.conf" ~/.config/kitty/
 cp "$SCRIPT_DIR/../kitty/theme.conf" ~/.config/kitty/
 
-echo "SLAP: Complete"
+SLAP_PRINT "Complete"
 

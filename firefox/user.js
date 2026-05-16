@@ -191,9 +191,12 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
+//
 user_prefs("browser.startup.page", true);
+user_pref("browser.startup.page", 3);
 user_pref("browser.tabs.hoverPreview.showThumbnails", false);
 user_prefs("browser.tabs.dragDrop.createGroup.enabled", false);
+user_pref("layout.css.prefers-color-scheme.content-override", 2); //dark mode pls
 
 // Firefox internal update timers (not usually critical)
 
@@ -222,6 +225,9 @@ user_pref("browser.urlbar.suggest.engines", false);
 user_pref("browser.urlbar.suggest.history", false);
 user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("browser.urlbar.suggest.topsites", false);
+user_pref("browser.search.defaultenginename", "DuckDuckGo");
+user_pref("browser.search.order.1", "DuckDuckGo");
+user_pref("browser.search.separatePrivateDefault.ui.enabled", false);
 
 // ----------------------
 // Homepage / Startup
