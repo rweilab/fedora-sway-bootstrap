@@ -64,4 +64,13 @@ echo "SLAP: Running extra installer scripts"
 ./scripts/waybar_copy.sh
 ./scripts/kitty_bootstrap.sh
 
+
+
+
+COUNT=4
+while [ $COUNT -gt 0 ]; do
+  echo "SLAP: !!! System reboot is required"
+  COUNT=$(($COUNT - 1))
+done
+
 echo "SLAP: FINISHED running $0"
