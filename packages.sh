@@ -65,15 +65,15 @@ cp "$SCRIPT_DIR/Cat_at_Play_4k.png" ~/Pictures/
 
 SLAP_PRINT "Running auxiliary installer scripts"
 chmod +x ./scripts/*.sh
-./scripts/installer_doom_emacs.sh
-./scripts/installer_protonvpn.sh
-./scripts/zsh_bootstrap.sh
+source ./scripts/installer_doom_emacs.sh
+source ./scripts/installer_protonvpn.sh
+source ./scripts/zsh_bootstrap.sh
 
 SLAP_PRINT "Running extra installer scripts"
-./scripts/waybar_copy.sh
-./scripts/kitty_bootstrap.sh
-./scripts/sway_override.sh
-./scripts/firefox.sh
+source ./scripts/waybar_copy.sh
+source ./scripts/kitty_bootstrap.sh
+source ./scripts/sway_override.sh
+source ./scripts/firefox.sh
 
 
 
