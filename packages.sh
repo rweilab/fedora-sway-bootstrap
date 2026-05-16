@@ -48,7 +48,8 @@ chmod +x ./scripts/*.sh
 ./scripts/installer_protonvpn.sh
 ./scripts/zsh_bootstrap.sh
 
-echo "SLAP: Running waybar script"
+echo "SLAP: Running extra installer scripts"
 ./scripts/waybar_copy.sh
+./scripts/kitty_bootstrap.sh
 
 echo "SLAP: FINISHED running $0"
