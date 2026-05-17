@@ -7,6 +7,8 @@ if pgrep waybar >/dev/null; then
     pkill waybar
 fi
 
+# Note waybar heavy modified from https://github.com/HANCORE-linux/waybar-themes v2.2
+
 
 SLAP_PRINT "Installing JetBrainsMono Nerdfont"
 mkdir -p "$SCRIPT_DIR"/fonts
