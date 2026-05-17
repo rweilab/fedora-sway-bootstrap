@@ -6,7 +6,10 @@ SLAP_PRINT "Executing $0"
 commands=(
   "sudo dnf install -y rust cargo"
 
-  "cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide"
+  # "cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide"
+  "cargo binstall --git 'https://github.com/feel-ix-343/markdown-oxide' markdown-oxide"
+
+  "export PATH="$HOME/.cargo/bin:$PATH""
 )
 
 for cmd in "${commands[@]}"; do

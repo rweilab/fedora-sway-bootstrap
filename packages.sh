@@ -81,6 +81,9 @@ SLAP_PRINT "Running extra installer scripts"
 
 
 # TODO
+# chezmoi add
+# nvim headless run for plugin/lsp install
+# service activate
 
 
 
