@@ -58,6 +58,7 @@ for arg in ${BONUS_PKGS[@]} ; do
   SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg
 done
+SLAP_PRINT "Updating TLDR cache"
 tldr --update
 
 

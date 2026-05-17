@@ -14,7 +14,7 @@ sudo cp "$SCRIPT_DIR/../Cat_at_Play_4k.png" "$THEME_DIR"
 WALLPAPER="$THEME_DIR/Cat_at_Play_4k.png"
 
 sudo mkdir -p "$XDG_CONFIG_HOME/swaylock/"
-cat > "$XDG_CONFIG_HOME/swaylock/config" <<EOF
+sudo cat > "$XDG_CONFIG_HOME/swaylock/config" <<EOF
 image=$WALLPAPER
 EOF
 
