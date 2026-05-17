@@ -4,23 +4,35 @@ source "$SCRIPT_DIR/../lib.sh"
 SLAP_PRINT "Executing $0"
 
 
-firefox &
-PID=$!
-while [ ! -d ~/.config/mozilla/firefox ]; do
-  sleep 0.2
+firefox >/dev/null 2>&1 &
+
+while true; do
+    PROFILE_DIR="$(find ~/.config/mozilla/firefox \
+        -maxdepth 1 \
+        -type d \
+        -name '*.default-release' \
+        2>/dev/null | head -n 1)"
+
+    [[ -n "$PROFILE_DIR" ]] && break
+
+    sleep 0.5
 done
 
-while ! pgrep firefox >/dev/null; do
-  sleep 0.2
-done
-kill $PID
+SLAP_PRINT "Located profile: $PROFILE_DIR"
+sleep 0.5
 
-PROFILE_DIR="$(find ~/.config/mozilla/firefox/ -name '*.default-release')"
-SLAP_PRINT "Located "$PROFILE_DIR""
+pkill firefox || true
+
 cp "$SCRIPT_DIR/../firefox/user.js" "$PROFILE_DIR"
 
-mkdir -p "$PROFILE_DIR"/chrome
-cp "$SCRIPT_DIR/../firefox/userChrome.css" "$PROFILE_DIR"/chrome
+mkdir -p "$PROFILE_DIR/chrome"
+
+cp \
+"$SCRIPT_DIR/../firefox/userChrome.css" \
+"$PROFILE_DIR/chrome"
+
 
 
 SLAP_PRINT "FINISHED running $0"
+
+

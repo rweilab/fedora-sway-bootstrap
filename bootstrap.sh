@@ -67,8 +67,8 @@ SLAP_PRINT "Loading chezmoi"
 
 SLAP_PRINT "Running /script installer scripts"
 ./scripts/catbg.sh
-./scripts/installer_doom_emacs.sh
-./scripts/installer_protonvpn.sh
+./scripts/doom_emacs.sh
+./scripts/protonvpn.sh
 ./scripts/zsh_bootstrap.sh
 ./scripts/waybar_copy.sh
 ./scripts/firefox.sh
