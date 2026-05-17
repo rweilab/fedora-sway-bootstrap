@@ -58,9 +58,13 @@ done
 SLAP_PRINT "Updating TLDR cache"
 tldr --update
 
-
 SLAP_PRINT "Running auxiliary installer scripts"
 chmod +x ./scripts/*.sh
+
+SLAP_PRINT "Loading chezmoi"
+./scripts/chezmoi.sh
+
+SLAP_PRINT "Running /script installer scripts"
 ./scripts/catbg.sh
 ./scripts/installer_doom_emacs.sh
 ./scripts/installer_protonvpn.sh
