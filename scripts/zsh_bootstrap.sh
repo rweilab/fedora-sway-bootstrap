@@ -14,10 +14,10 @@ else
   while true; do
       ((attempts++))
       if chsh -s "$(command -v zsh)"; then
-          echo "Shell changed successfully"
+          SLAP_PRINT "Shell changed successfully"
           break
       fi
-      echo "Wrong password (attempt $attempts)"
+      SLAP_PRINT "Wrong password (attempt $attempts)"
   done
 fi
 
