@@ -7,10 +7,10 @@ if pgrep waybar >/dev/null; then
     pkill waybar
 fi
 
-mkdir -p ~/.config/waybar
-cp "$SCRIPT_DIR/../waybar/config.jsonc" ~/.config/waybar/
-cp "$SCRIPT_DIR/../waybar/style.css" ~/.config/waybar/
-SLAP_PRINT "Copied waybar files"
+# mkdir -p ~/.config/waybar
+# cp "$SCRIPT_DIR/../waybar/config.jsonc" ~/.config/waybar/
+# cp "$SCRIPT_DIR/../waybar/style.css" ~/.config/waybar/
+# SLAP_PRINT "Copied waybar files"
 
 mkdir -p "$SCRIPT_DIR"/fonts
 cd "$SCRIPT_DIR"/fonts

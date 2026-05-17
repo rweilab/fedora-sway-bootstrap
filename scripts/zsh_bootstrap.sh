@@ -18,7 +18,9 @@ cp "$SCRIPT_DIR/../zsh/xdg.zshenv" ~/.config/zsh/.zshenv
 cp -t ~/ "$SCRIPT_DIR/../zsh/.zshenv" 
 SLAP_PRINT "Complete"
 
+#TODO
+# dont chsh if $SHELL is already zsh
 SLAP_PRINT "Changing login shell"
 chsh -s "$(command -v zsh)"
 SLAP_PRINT "Complete"
-
+# error handling if wrong password so it doesn't exit whole bootstrapper?

@@ -13,11 +13,11 @@ SLAP_PRINT "Located $THEME_DIR"
 sudo cp "$SCRIPT_DIR/../Cat_at_Play_4k.png" "$THEME_DIR"
 WALLPAPER="$THEME_DIR/Cat_at_Play_4k.png"
 
-CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
-mkdir -p "$CONFIG_DIR/swaylock"
-cat > "$CONFIG_DIR/swaylock/config" <<EOF
-image=$WALLPAPER
-EOF
+# CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+# mkdir -p "$CONFIG_DIR/swaylock"
+# cat > "$CONFIG_DIR/swaylock/config" <<EOF
+# image=$WALLPAPER
+# EOF
 
 
 

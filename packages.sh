@@ -65,9 +65,10 @@ chmod +x ./scripts/*.sh
 ./scripts/installer_doom_emacs.sh
 ./scripts/installer_protonvpn.sh
 ./scripts/zsh_bootstrap.sh
+# dont switch shell if already zsh
 ./scripts/waybar_copy.sh
 ./scripts/kitty_bootstrap.sh
-./scripts/sway_override.sh
+# ./scripts/sway_override.sh
 ./scripts/firefox.sh
 ./scripts/flatpak.sh
 # ./scripts/markdown_oxide.sh

@@ -45,7 +45,7 @@ input * {
 }
 
 # Remove window title bar
-default_border none
-default_floating_border none
+default_border 2
+default_floating_border 2
 titlebar_padding 1
 titlebar_border_thickness 0
