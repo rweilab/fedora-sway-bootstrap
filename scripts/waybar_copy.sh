@@ -7,11 +7,8 @@ if pgrep waybar >/dev/null; then
     pkill waybar
 fi
 
-# mkdir -p ~/.config/waybar
-# cp "$SCRIPT_DIR/../waybar/config.jsonc" ~/.config/waybar/
-# cp "$SCRIPT_DIR/../waybar/style.css" ~/.config/waybar/
-# SLAP_PRINT "Copied waybar files"
 
+SLAP_PRINT "Installing JetBrainsMono Nerdfont"
 mkdir -p "$SCRIPT_DIR"/fonts
 cd "$SCRIPT_DIR"/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip

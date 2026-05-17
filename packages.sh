@@ -43,14 +43,15 @@ done
 
 # --- Normal dnf install
 SLAP_PRINT "Installing PKGS"
-PKGS=(neovim yazi emacs tailscale syncthing chezmoi)
+PKGS=(neovim yazi emacs tailscale syncthing chezmoi kitty zsh)
 for arg in "${PKGS[@]}" ; do
   SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg
 done
 
 SLAP_PRINT "Installing BONUS_PKGS"
-BONUS_PKGS=(ripgrep fzf tealdeer ffmpeg fd-find nodejs npm rust cargo)
+BONUS_PKGS=(ripgrep fzf tealdeer ffmpeg fd-find nodejs npm rust cargo jetbrains-mono-fonts)
+
 for arg in ${BONUS_PKGS[@]} ; do
   SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg
@@ -68,13 +69,15 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/catbg.sh
 ./scripts/installer_doom_emacs.sh
 ./scripts/installer_protonvpn.sh
+
 ./scripts/zsh_bootstrap.sh
 # dont switch shell if already zsh
 ./scripts/waybar_copy.sh
-./scripts/kitty_bootstrap.sh
-# ./scripts/sway_override.sh
 ./scripts/firefox.sh
-./scripts/flatpak.sh
+# ./scripts/flatpak.sh
+# TODO
+# read flatpak - temporarily removed since not needed for debug
+
 # ./scripts/markdown_oxide.sh
 # bypass in favor of Mason binary installation in nvim setup
 # building markdown-oxide from source is taking to long

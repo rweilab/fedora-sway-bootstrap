@@ -1,26 +1,25 @@
 #!/usr/bin/env bash
-set -e
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../lib.sh"
 SLAP_PRINT "Executing $0"
+set -e
 
-SLAP_PRINT "Installing dependencies for zsh"
-sudo dnf install -y zsh
-SLAP_PRINT "Complete"
+SLAP_PRINT "Checking login shell"
+LOGIN_SHELL="$(getent passwd "$USER")"
+if [[ "$LOGIN_SHELL" == */zsh ]]; then
+    echo ""
+    SLAP_PRINT "Login shell is zsh ; No need to change shell"
+else
+  attempts=0
+  while true; do
+      ((attempts++))
+      if chsh -s "$(command -v zsh)"; then
+          echo "Shell changed successfully"
+          break
+      fi
+      echo "Wrong password (attempt $attempts)"
+  done
+fi
 
-SLAP_PRINT "Copying zsh files to XDG-compliant filepath"
-mkdir -p ~/.config/zsh/
-cp -t ~/.config/zsh/ "$SCRIPT_DIR/../zsh/user.zsh" 
-cp -t ~/.config/zsh/ "$SCRIPT_DIR/../zsh/plugin.zsh"
-cp "$SCRIPT_DIR/../zsh/xdg.zshenv" ~/.config/zsh/.zshenv
 
-cp -t ~/ "$SCRIPT_DIR/../zsh/.zshenv" 
-SLAP_PRINT "Complete"
-
-#TODO
-# dont chsh if $SHELL is already zsh
-SLAP_PRINT "Changing login shell"
-chsh -s "$(command -v zsh)"
-SLAP_PRINT "Complete"
-# error handling if wrong password so it doesn't exit whole bootstrapper?
+SLAP_PRINT "FINISHED running $0"
