@@ -75,13 +75,16 @@ SLAP_PRINT "Running extra installer scripts"
 ./scripts/sway_override.sh
 ./scripts/firefox.sh
 ./scripts/flatpak.sh
+./scripts/markdown_oxide.sh
 
 
 
-COUNT=4
+COUNT=5
 while [ $COUNT -gt 0 ]; do
   SLAP_PRINT "!!! System reboot is required"
   COUNT=$(($COUNT - 1))
 done
+
+./scripts/rebootyn.sh
 
 SLAP_PRINT "FINISHED running $0"

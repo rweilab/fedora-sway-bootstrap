@@ -21,11 +21,15 @@ function y() {
 export EDITOR=nvim
 export VISUAL=nvim
 
-alias emc="nohup emacsclient -c & disown"
 alias chezomi="chezmoi"
-alias yeet='paru -Rcs'
 alias n="nvim"
 alias nn="nvim ~/syncthing/2026_Spring/notes"
+alias c="clear"
+
+
+
+
+export PATH="$HOME/.cargo/bin:$PATH"
 
 
 # ----- good bloat identifier ------
