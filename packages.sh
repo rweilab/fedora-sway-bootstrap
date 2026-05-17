@@ -74,7 +74,7 @@ SLAP_PRINT "Running extra installer scripts"
 ./scripts/kitty_bootstrap.sh
 ./scripts/sway_override.sh
 ./scripts/firefox.sh
-
+./scripts/flatpak.sh
 
 
 
