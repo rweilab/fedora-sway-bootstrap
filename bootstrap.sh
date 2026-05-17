@@ -71,22 +71,13 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/installer_protonvpn.sh
 
 ./scripts/zsh_bootstrap.sh
-# dont switch shell if already zsh
 ./scripts/waybar_copy.sh
 ./scripts/firefox.sh
 # ./scripts/flatpak.sh
 # TODO
-# read flatpak - temporarily removed since not needed for debug
-
-# ./scripts/markdown_oxide.sh
-# bypass in favor of Mason binary installation in nvim setup
-# building markdown-oxide from source is taking to long
+# reactivate flatpak.sh - temporarily removed since not needed for debug
 
 
-# TODO
-# chezmoi add
-# nvim headless run for plugin/lsp install
-# service activate
 
 # FURTHER EXPANSION IDEAS:
 # https://github.com/swaywm/sway/wiki/Useful-add-ons-for-sway

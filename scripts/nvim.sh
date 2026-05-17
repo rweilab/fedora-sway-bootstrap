@@ -10,7 +10,7 @@ nvim --headless \
 lua-language-server \
 rust-analyzer \
 bash-language-server \
-markdown-oxide" \
+markdown-oxide \
 clangd" \
 +qa
 
