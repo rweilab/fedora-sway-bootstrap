@@ -2,7 +2,6 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../lib.sh"
 SLAP_PRINT "Executing $0"
-set -e
 
 SLAP_PRINT "Checking login shell"
 LOGIN_SHELL="$(getent passwd "$USER")"
@@ -10,6 +9,8 @@ if [[ "$LOGIN_SHELL" == */zsh ]]; then
     echo ""
     SLAP_PRINT "Login shell is zsh ; No need to change shell"
 else
+  SLAP_PRINT "Login shell is not Zsh"
+  SLAP_PRINT "Changing login shell to Zsh"
   attempts=0
   while true; do
       ((attempts++))

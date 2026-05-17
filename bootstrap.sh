@@ -73,6 +73,8 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/waybar_copy.sh
 ./scripts/firefox.sh
 ./scripts/flatpak.sh
+./scripts/nvim.sh
+./scripts/services.sh
 # TODO
 # any way to store sidebery .json config?
 
