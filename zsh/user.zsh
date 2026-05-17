@@ -25,6 +25,7 @@ alias chezomi="chezmoi"
 alias n="nvim"
 alias nn="nvim ~/syncthing/2026_Spring/notes"
 alias c="clear"
+alias rb="systemctl reboot"
 
 
 

@@ -36,7 +36,7 @@ set $menu rofi -show drun -show-icons
 # exec_always swaybg -i ~/Pictures/Cat_at_Play_4k.png -m fit
 # Fedora calls output which can beat race conditions
 # Best thing to do is to not even play and do the same to successfully override
-output * bg /home/slap/Pictures/Cat_at_Play_4k.png fill
+output * bg /usr/share/backgrounds/Cat_at_Play_4k.png fill
 exec brightnessctl set 100%
 
 input * {
@@ -44,4 +44,8 @@ input * {
     repeat_delay 175
 }
 
-default_border pixel 2
+# Remove window title bar
+default_border none
+default_floating_border none
+titlebar_padding 1
+titlebar_border_thickness 0
