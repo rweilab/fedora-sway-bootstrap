@@ -69,14 +69,12 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/catbg.sh
 ./scripts/installer_doom_emacs.sh
 ./scripts/installer_protonvpn.sh
-
 ./scripts/zsh_bootstrap.sh
 ./scripts/waybar_copy.sh
 ./scripts/firefox.sh
-# ./scripts/flatpak.sh
+./scripts/flatpak.sh
 # TODO
-# reactivate flatpak.sh - temporarily removed since not needed for debug
-
+# any way to store sidebery .json config?
 
 
 # FURTHER EXPANSION IDEAS:
@@ -90,6 +88,5 @@ while [ $COUNT -gt 0 ]; do
   COUNT=$(($COUNT - 1))
 done
 ./scripts/rebootyn.sh
-
 
 SLAP_PRINT "FINISHED running $0"
