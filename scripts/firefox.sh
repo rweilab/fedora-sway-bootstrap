@@ -19,7 +19,6 @@ while true; do
 done
 
 SLAP_PRINT "Located profile: $PROFILE_DIR"
-sleep 0.5
 
 pkill firefox || true
 

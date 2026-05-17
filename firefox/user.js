@@ -197,7 +197,7 @@ user_pref("browser.startup.page", 3);
 user_pref("browser.tabs.hoverPreview.showThumbnails", false);
 userpref("browser.tabs.dragDrop.createGroup.enabled", false);
 user_pref("layout.css.prefers-color-scheme.content-override", 0); //dark mode pls
-user_pref("ui.systemUsesDarkTheme", 1`);
+user_pref("ui.systemUsesDarkTheme", 1);
 
 // Firefox internal update timers (not usually critical)
 
@@ -267,7 +267,19 @@ user_pref("browser.urlbar.trimHttps", true);
 user_pref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
 user_pref("network.IDN_show_punycode", true);
 
+// ----------------------
+// Disable browser's built-in password manager/autofill
+// ----------------------
+// Disable form autofill for addresses and credit cards
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
 
+// Disable automatic sign-on and related features
+user_pref("signon.autofillForms", false);
+user_pref("signon.firefoxRelay.feature", "disabled");
+user_pref("signon.generation.enabled", false);
+user_pref("signon.management.page.breach-alerts.enabled", false);
+user_pref("signon.rememberSignons", false);
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
