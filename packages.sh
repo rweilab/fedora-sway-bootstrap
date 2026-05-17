@@ -39,6 +39,8 @@ for i in "${!PRIO_PKGS[@]}"; do
 
   SLAP_PRINT "$pkg from $repo"
   sudo dnf -y install "$pkg" --from-repo="$repo"
+  SLAP_PRINT "dnf versionlock adding: $pkg"
+  sudo dnf versionlock add "$pkg"
 done
 
 # --- Normal dnf install

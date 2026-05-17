@@ -43,3 +43,5 @@ input * {
     repeat_rate 50
     repeat_delay 175
 }
+
+default_border pixel 2
