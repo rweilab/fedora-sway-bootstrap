@@ -43,7 +43,7 @@ done
 
 # --- Normal dnf install
 SLAP_PRINT "Installing PKGS"
-PKGS=(neovim yazi emacs tailscale syncthing chezmoi kitty zsh)
+PKGS=(neovim yazi emacs tailscale syncthing chezmoi kitty zsh wayvnc)
 for arg in "${PKGS[@]}" ; do
   SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg
@@ -74,6 +74,7 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/firefox.sh
 ./scripts/flatpak.sh
 ./scripts/nvim.sh
+./scripts/vnc.sh
 ./scripts/services.sh
 # TODO
 # any way to store sidebery .json config?
