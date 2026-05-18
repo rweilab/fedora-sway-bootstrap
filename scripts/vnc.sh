@@ -4,7 +4,7 @@ source "$SCRIPT_DIR/../lib.sh"
 SLAP_PRINT "Executing $0"
 
 sudo mkdir -p /usr/local/bin
-sudo tee /usr/local/bin/start-vnc.sh > /dev/null << 'EOF'
+sudo tee /usr/local/bin/start-vnc > /dev/null << 'EOF'
 #!/bin/bash
 
 sudo firewall-cmd --add-port=5900/tcp
@@ -15,7 +15,7 @@ swaymsg create_output HEADLESS-1
 wayvnc --output=HEADLESS-1 --max-fps=20 0.0.0.0 5900 &
 EOF
 
-sudo chmod +x /usr/local/bin/start-vnc.sh
+sudo chmod +x /usr/local/bin/start-vnc
 
 echo "done"
 
