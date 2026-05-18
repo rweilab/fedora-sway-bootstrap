@@ -14,6 +14,8 @@ swaymsg create_output HEADLESS-1
 
 wayvnc --output=HEADLESS-1 --max-fps=20 0.0.0.0 5900 &
 
+sudo firewall-cmd --remove-port=5900/tcp --permanent
+
 echo -e "\033[1;33m=== WORKSPACES ===\033[0m"
 swaymsg -t get_workspaces
 
