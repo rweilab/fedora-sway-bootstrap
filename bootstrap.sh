@@ -13,7 +13,7 @@ if ! curl -fsI https://google.com >/dev/null; then
 fi
 SLAP_PRINT "SLAP: Internet OK"
 
-sudo dnf upgrade --refresh
+sudo dnf -y upgrade --refresh
 
 SLAP_PRINT "Installing COPR_PKGS"
 COPR_PKGS=(lihaohong/yazi agriffis/neovim-nightly)

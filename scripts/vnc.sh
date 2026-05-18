@@ -7,7 +7,7 @@ sudo mkdir -p /usr/local/bin
 sudo tee /usr/local/bin/start-vnc > /dev/null << 'EOF'
 #!/bin/bash
 
-sudo firewall-cmd --add-port=5900/tcp
+sudo firewall-cmd --add-port=5900/tcp --permanent
 sudo firewall-cmd --reload
 
 swaymsg create_output HEADLESS-1
