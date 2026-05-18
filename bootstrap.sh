@@ -13,6 +13,7 @@ if ! curl -fsI https://google.com >/dev/null; then
 fi
 SLAP_PRINT "SLAP: Internet OK"
 
+sudo dnf upgrade --refresh
 
 SLAP_PRINT "Installing COPR_PKGS"
 COPR_PKGS=(lihaohong/yazi agriffis/neovim-nightly)
@@ -63,7 +64,7 @@ SLAP_PRINT "Running auxiliary installer scripts"
 chmod +x ./scripts/*.sh
 
 SLAP_PRINT "Loading chezmoi"
-./scripts/chezmoi.sh
+chezmoi init --apply https://github.com/rweilab/dots-fedora-sway.git
 
 SLAP_PRINT "Running /script installer scripts"
 ./scripts/catbg.sh
@@ -75,10 +76,13 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/flatpak.sh
 ./scripts/nvim.sh
 ./scripts/vnc.sh
-./scripts/services.sh
-# TODO
-# any way to store sidebery .json config?
+# Vscodium install from upstream
+sudo curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
+sudo dnf -y install codium
 
+systemctl --user enable syncthing.service
+systemctl --user start syncthing.service
+sudo systemctl enable --now tailscaled
 
 # FURTHER EXPANSION IDEAS:
 # https://github.com/swaywm/sway/wiki/Useful-add-ons-for-sway

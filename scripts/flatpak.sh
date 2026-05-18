@@ -9,7 +9,6 @@ commands=(
   "flatpak install -y flathub io.github.flattool.Warehouse"
   "flatpak install -y flathub com.parsecgaming.parsec"
   "flatpak install -y flathub org.onlyoffice.desktopeditors"
-  "flatpak install -y flathub com.vscodium.codium"
   "flatpak install -y flathub md.obsidian.Obsidian"
   "flatpak install -y flathub com.adilhanney.saber"
 )

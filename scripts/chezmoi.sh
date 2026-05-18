@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/../lib.sh"
-SLAP_PRINT "Executing $0"
-
-chezmoi init --apply https://github.com/rweilab/dots-fedora-sway.git
-
-SLAP_PRINT "FINISHED running $0"
