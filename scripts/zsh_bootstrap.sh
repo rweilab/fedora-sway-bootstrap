@@ -22,5 +22,7 @@ else
   done
 fi
 
+SLAP_PRINT "Prewarming Zsh plugins.."
+zsh -ic 'source ~/.config/zsh/.zshrc && zinit update --all && exit'
 
 SLAP_PRINT "FINISHED running $0"
