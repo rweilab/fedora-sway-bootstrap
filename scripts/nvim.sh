@@ -11,6 +11,7 @@ lua-language-server \
 rust-analyzer \
 bash-language-server \
 markdown-oxide \
+basedpyright \
 clangd" \
 +qa
 
