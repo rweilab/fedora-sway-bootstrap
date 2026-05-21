@@ -51,8 +51,7 @@ for arg in "${PKGS[@]}" ; do
 done
 
 SLAP_PRINT "Installing BONUS_PKGS"
-BONUS_PKGS=(ripgrep fzf tealdeer ffmpeg fd-find nodejs npm rust cargo jetbrains-mono-fonts)
-
+BONUS_PKGS=(btop ripgrep fzf tealdeer ffmpeg fd-find nodejs npm rust cargo jetbrains-mono-fonts)
 for arg in ${BONUS_PKGS[@]} ; do
   SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg
@@ -76,6 +75,7 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/flatpak.sh
 ./scripts/nvim.sh
 ./scripts/vnc.sh
+./scripts/myclibin.sh
 # Vscodium install from upstream
 sudo curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
 sudo dnf -y install codium
@@ -87,7 +87,6 @@ sudo systemctl enable --now tailscaled
 # FURTHER EXPANSION IDEAS:
 # https://github.com/swaywm/sway/wiki/Useful-add-ons-for-sway
 # wlsunset?
-
 
 COUNT=5
 while [ $COUNT -gt 0 ]; do
