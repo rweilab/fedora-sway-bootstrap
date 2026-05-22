@@ -4,11 +4,11 @@ source "$SCRIPT_DIR/../lib.sh"
 SLAP_PRINT "Executing $0"
 set -e
 
-sudo cp "$SCRIPT_DIR/../Cat_at_Play_4k.png" /usr/share/backgrounds/
+sudo cp "$SCRIPT_DIR/../wallpapers/Cat_at_Play_4k.png" /usr/share/backgrounds/
 
 THEME_DIR="$(find /usr/share/sddm/themes/ -type d -iname '*fedora' | head -n 1)"
 SLAP_PRINT "Located $THEME_DIR"
-sudo cp "$SCRIPT_DIR/../Cat_at_Play_4k.png" "$THEME_DIR"
+sudo cp "$SCRIPT_DIR/../wallpapers/Cat_at_Play_4k.png" "$THEME_DIR"
 WALLPAPER="$THEME_DIR/Cat_at_Play_4k.png"
 
 
