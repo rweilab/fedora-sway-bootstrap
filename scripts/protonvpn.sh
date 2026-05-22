@@ -8,4 +8,6 @@ sudo dnf install -y ./protonvpn-stable-release-1.0.4-1.noarch.rpm && sudo dnf ch
 
 sudo dnf install -y proton-vpn-gnome-desktop 
 
+rm *.noarch.rpm
+
 SLAP_PRINT "FINISHED running $0"

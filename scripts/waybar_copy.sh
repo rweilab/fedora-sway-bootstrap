@@ -16,7 +16,7 @@ cd "$SCRIPT_DIR"/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
 mkdir -p ~/.local/share/fonts/JetBrainsMono
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
-rm JetBrainsMono.zip
+rm -rf "$SCRIPTS_DIR"/fonts
 fc-cache -fv
 
 SLAP_PRINT "Reopening waybar"
