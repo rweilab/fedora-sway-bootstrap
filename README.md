@@ -23,6 +23,7 @@ Includes but not limited to:
     - NOTE: Make sure to hit `y` to generating envvar files during bootstrap
 - Sway+VNC script to allow any device with VNC viewer to be used as an **extended display**
 - Custom CLI day progress bar written in Python to track progress towards important dates
+    - Supports 24-bit color through ANSI codes and rendering with LERP between two colors
 - Firefox improvements (opinionated) including:
     - Automatic profile detection for Betterfox user.js overrides + custom additional hardening + dark mode
     - userChrome.css to remove/auto-hide nav bar with **expected Sideberry** use to optimize usable screen space
