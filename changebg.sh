@@ -19,7 +19,7 @@ CONFIGS=(
 )
 
 temp_index=0
-
+SLAP_PRINT "Select a wallpaper (1-${#WALLPAPERS[@]}):"
 for w in "$WALLPAPER_DIR"/*; do
   name="${w##*/}"
 
