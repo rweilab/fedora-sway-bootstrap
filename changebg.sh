@@ -16,7 +16,7 @@ temp_index=0
 for w in "${WALLPAPERS[@]}"; do
   name="${w##*/}"
 
-  if [[ "$w" == "$CURRENT" ]]; then
+  if cmp -s "$w" "$TARGET"; then
     echo -e "\033[1m$temp_index\033[0m: $name \t(Current)"
   else
     echo -e "\033[1m$temp_index\033[0m: $name"
@@ -37,7 +37,7 @@ new="${WALLPAPERS[$pick]}"
 echo "Selected:"
 echo "$new"
 
-sudo ln -sf "$new" "$TARGET"
+sudo cp "$new" "$TARGET"
 
 swaymsg reload
 
