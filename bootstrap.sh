@@ -75,7 +75,7 @@ SLAP_PRINT "Running /script installer scripts"
 ./scripts/flatpak.sh
 ./scripts/nvim.sh
 ./scripts/vnc.sh
-./scripts/myclibin.sh
+./scripts/mybin.sh
 # Vscodium install from upstream
 sudo curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
 sudo dnf -y install codium

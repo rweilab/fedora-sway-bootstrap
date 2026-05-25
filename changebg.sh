@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+SLAP_PRINT() {
+    echo -e "\033[1;33mSLAP:\033[0m $*"
+}
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/lib.sh"
 SLAP_PRINT "Executing $0"
 
 WALLPAPER_DIR="$SCRIPT_DIR/wallpapers"
