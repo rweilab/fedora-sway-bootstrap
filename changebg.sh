@@ -19,42 +19,36 @@ CONFIGS=(
 )
 
 temp_index=0
-SLAP_PRINT "Select a wallpaper (1-${#WALLPAPERS[@]}):"
 for w in "$WALLPAPER_DIR"/*; do
   name="${w##*/}"
 
   if [[ -f "/usr/share/backgrounds/$name" ]]; then
     MATCH=$name
-    echo -e "$temp_index: $name \t (Current)"
+    echo -e "\033[1m$temp_index\033[0m: $name \t (Current)"
+    old=$w
     temp_index=$(($temp_index + 1))
   else
-    echo "$temp_index: ${w##*/}"
+    echo -e "\033[1m$temp_index\033[0m: ${w##*/}"
     temp_index=$(($temp_index + 1))
   fi
+
+done
+
+read -p "Select a wallpaper (0-$((${#WALLPAPERS[@]} - 1))): " pick
+new=${WALLPAPERS[$pick]}
+
+echo $old
+echo $new
+
+for dir in $PIC_DIRS; do
+  sudo cp yadayada
 done
 
 
 
-# for w in "${WALLPAPERS[@]}"; do
-#   # grep or rg /usr/share/sddm/theme/theme.conf for w##*/
-#   rg $w ${PIC_DIRS[1]}
-#   echo "$w"
-#   echo "${w##*/}"
-# done
-
 # copy new to PIC_DIRS
 # change CONFIGS filepaths
 # remove old pics from PIC_DIRS
-#
-# old="/usr/share/backgrounds/old.png"
-# new="/usr/share/backgrounds/new.png"
-
-
-
-
-
-
-
 
 # sudo cp "$SCRIPT_DIR/../wallpapers/Cat_at_Play_4k.png" /usr/share/backgrounds/
 #
