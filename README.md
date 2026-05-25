@@ -22,7 +22,7 @@ Includes but not limited to:
     - Custom Agenda view through `SPC-o-a-a-c` for Overdue/Multi-Day/Unscheduled TODOs
     - NOTE: Make sure to hit `y` to generating envvar files during bootstrap
 - Sway+VNC script to allow any device with VNC viewer to be used as an **extended display**
-- Custom CLI day progress bar written in Python to track progress towards important dates
+- CLI day progress bar written in Python to track progress towards important dates
     - Supports 24-bit color through ANSI codes and rendering with LERP between two colors
 - Firefox improvements (opinionated) including:
     - Automatic profile detection for Betterfox user.js overrides + custom additional hardening + dark mode
@@ -31,3 +31,4 @@ Includes but not limited to:
     - Multi-word search history & autosuggestions
     - Fast syntax highlighting, fzf-search, and useful Git aliases
 - Flatpak/Flathub/Warehouse automatic sourcing/installation
+- Background changing script complete with autodetection via symlinks in ~/bin for easy access with `changebg`
