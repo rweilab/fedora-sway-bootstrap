@@ -51,7 +51,7 @@ for arg in "${PKGS[@]}" ; do
 done
 
 SLAP_PRINT "Installing BONUS_PKGS"
-BONUS_PKGS=(btop ripgrep fzf tealdeer ffmpeg fd-find nodejs npm rust cargo jetbrains-mono-fonts)
+BONUS_PKGS=(btop ripgrep fzf tealdeer ffmpeg fd-find nodejs npm rust cargo jetbrains-mono-fonts wl-clipboard cliphist fuzzel)
 for arg in ${BONUS_PKGS[@]} ; do
   SLAP_PRINT "Installing package: $arg"
   sudo dnf install -y $arg

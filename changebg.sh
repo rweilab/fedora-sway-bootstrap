@@ -25,7 +25,7 @@ for w in "${WALLPAPERS[@]}"; do
   ((temp_index++))
 done
 
-read -rp "Select wallpaper: " pick
+read -rp "Select wallpaper: (0-$(($temp_index - 1))): " pick
 
 if [[ ! "$pick" =~ ^[0-9]+$ ]] || (( pick < 0 || pick >= ${#WALLPAPERS[@]} )); then
   echo "Invalid selection"
