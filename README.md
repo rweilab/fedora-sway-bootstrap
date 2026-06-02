@@ -32,3 +32,61 @@ Includes but not limited to:
     - Fast syntax highlighting, fzf-search, and useful Git aliases
 - Flatpak/Flathub/Warehouse automatic sourcing/installation
 - Background changing script complete with autodetection via symlinks in ~/bin for easy access with `changebg`
+
+```mermaid
+flowchart TD
+    A[bootstrap.sh]
+    B[Internet Check]
+
+    subgraph SYS["System Provisioning"]
+        C[System Update]
+        D[Enable COPR/Extra Repositories]
+        E[Install Packages]
+        F[Clone/Apply Chezmoi Dotfiles]
+    end
+
+    subgraph CFG["Configuration Scripts"]
+        G[Desktop<br/>Wallpaper + Waybar]
+
+        H[Development<br/>Neovim + Doom Emacs + Zsh]
+
+        I[Applications<br/>Firefox + Flatpak + ProtonVPN]
+
+        J[Utilities<br/>VNC + ~/bin Helpers]
+    end
+
+    K[Enable Services<br/>Syncthing + Tailscale]
+
+    L[Reboot Prompt]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    F --> H
+    F --> I
+    F --> J
+
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+
+    K --> L
+```
+
+### Firefox Configuration
+```mermaid
+flowchart LR
+
+    A[Launch Firefox]
+    B[Detect *.default-release Profile]
+    C[Close Firefox]
+    D[Copy user.js]
+    E[Copy userChrome.css]
+
+    A --> B --> C --> D --> E
+```
+```
