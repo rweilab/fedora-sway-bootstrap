@@ -11,6 +11,7 @@ commands=(
   "flatpak install -y flathub org.onlyoffice.desktopeditors"
   "flatpak install -y flathub md.obsidian.Obsidian"
   "flatpak install -y flathub com.adilhanney.saber"
+  "flatpak install flathub com.spotify.Client"
 )
 
 for cmd in "${commands[@]}"; do
