@@ -89,4 +89,12 @@ flowchart LR
 
     A --> B --> C --> D --> E
 ```
-```
+
+
+## TODOS:
+- automate wl-clipboard and wl-mirror, and add `mirror` bin tool
+- use most recent nvim & sway configs
+- install vscodium and vscode from copr packages instead of sandboxed flatpaks
+- add moonlight to flatpak installers
+- add arduinoIDE
+- check on automatically creating vscode profiles with plugins/themes
